@@ -19,7 +19,26 @@ module.exports = () => {
       path: path.resolve(__dirname, "dist"),
     },
 
-    plugins: [new WorkboxPlugin.GenerateSW()],
+    plugins: [
+      new WorkboxPlugin.GenerateSW(),
+
+      new WebpackPwaManifest({
+        name: "Just Another Text Editor",
+        short_name: "JATE",
+        description: "Edit text!",
+        background_color: "black",
+        theme_color: "slateblue",
+        start_url: "./",
+        publicPath: "./",
+        icons: [
+          {
+            src: path.resolve("./src/images/logo.png"),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join("assets", "icons"),
+          },
+        ],
+      }),
+    ],
 
     module: {
       rules: [],
