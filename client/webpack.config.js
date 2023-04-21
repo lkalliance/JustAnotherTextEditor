@@ -1,10 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackPwaManifest = require("webpack-pwa-manifest");
 const path = require("path");
-const { GenerateSW, InjectManifest } = require("workbox-webpack-plugin");
-
-// TODO: Add and configure workbox plugins for a service worker and manifest file.
-// TODO: Add CSS loaders and babel to webpack.
+const { GenerateSW } = require("workbox-webpack-plugin");
 
 module.exports = () => {
   return {
@@ -20,7 +17,7 @@ module.exports = () => {
     },
 
     plugins: [
-      new WorkboxPlugin.GenerateSW(),
+      new GenerateSW(),
 
       new WebpackPwaManifest({
         name: "Just Another Text Editor",
