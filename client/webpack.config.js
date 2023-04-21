@@ -1,6 +1,7 @@
+const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const WebpackPwaManifest = require("webpack-pwa-manifest");
-const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { GenerateSW } = require("workbox-webpack-plugin");
 
 module.exports = () => {
@@ -17,6 +18,13 @@ module.exports = () => {
     },
 
     plugins: [
+      new HtmlWebpackPlugin({
+        template: "./index.html",
+        title: "J.A.T.E.",
+      }),
+
+      new MiniCssExtractPlugin(),
+
       new GenerateSW(),
 
       new WebpackPwaManifest({
