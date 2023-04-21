@@ -13,25 +13,13 @@ module.exports = () => {
       main: "./src/js/index.js",
       install: "./src/js/install.js",
     },
+
     output: {
       filename: "[name].bundle.js",
       path: path.resolve(__dirname, "dist"),
     },
-    plugins: [
-      new WorkboxPlugin.GenerateSW({
-        // Define runtime caching rules.
-        runtimeCaching: [
-          {
-            // caching of images
-            urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
-            handler: "CacheFirst",
-            options: {
-              cacheName: "images",
-            },
-          },
-        ],
-      }),
-    ],
+
+    plugins: [new WorkboxPlugin.GenerateSW()],
 
     module: {
       rules: [],
