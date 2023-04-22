@@ -25,7 +25,16 @@ export const getAllDb = async () => {
   const jateDb = await openDB("jate", 1);
   const tx = jateDb.transaction("jate", "readonly");
   const store = tx.objectStore("jate");
-  const request = store.getAll({ text: content });
+  const request = store.getAll();
+  const result = await request;
+  console.log("Data saved to the database", result);
+};
+
+export const getOneDb = async (id) => {
+  const jateDb = await openDB("jate", 1);
+  const tx = jateDb.transaction("jate", "readonly");
+  const store = tx.objectStore("jate");
+  const request = store.get(id);
   const result = await request;
   console.log("Data saved to the database", result);
 };
