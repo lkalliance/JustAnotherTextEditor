@@ -1,13 +1,9 @@
-import { Workbox } from "workbox-window";
 import Editor from "./editor";
 import { registerSW } from "./register-sw.js";
-const { Install } = await import("./install.js");
 import "../css/style.css";
 
 const main = document.querySelector("#main");
 main.innerHTML = "";
-
-new Install(document.querySelector("#buttonInstall"));
 
 const loadSpinner = () => {
   const spinner = document.createElement("div");
