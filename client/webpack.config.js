@@ -19,15 +19,19 @@ module.exports = () => {
     },
 
     plugins: [
+      // create the template
       new HtmlWebpackPlugin({
         template: "./index.html",
         title: "J.A.T.E.",
       }),
 
+      // minify the CSS
       new MiniCssExtractPlugin(),
 
+      // create the service worker
       new GenerateSW(),
 
+      // create the manifest
       new WebpackPwaManifest({
         name: "Just Another Text Editor",
         short_name: "JATE",
@@ -49,6 +53,7 @@ module.exports = () => {
     ],
 
     module: {
+      // define loaders for file types
       rules: [
         {
           test: /\.css$/i,

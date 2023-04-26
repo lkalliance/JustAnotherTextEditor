@@ -13,6 +13,7 @@ const initdb = async () =>
   });
 
 export const postDb = async (content) => {
+  // This function posts data to the IndexedDB
   const jateDb = await openDB("jate", 1);
   const tx = jateDb.transaction("jate", "readwrite");
   const store = tx.objectStore("jate");
@@ -22,6 +23,7 @@ export const postDb = async (content) => {
 };
 
 export const getAllDb = async () => {
+  // This function gets all data from the IndexedDB
   const jateDb = await openDB("jate", 1);
   const tx = jateDb.transaction("jate", "readonly");
   const store = tx.objectStore("jate");
