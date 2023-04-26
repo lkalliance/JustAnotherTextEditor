@@ -14,6 +14,7 @@ butInstall.addEventListener("click", async () => {
   const promptEvent = window.deferredPrompt;
   if (!promptEvent) {
     console.log("No prompt event, I'm returning");
+    butInstall.classList.toggle("hidden", true);
     return;
   }
   promptEvent.prompt();
