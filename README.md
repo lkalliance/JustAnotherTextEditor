@@ -17,7 +17,8 @@ As a PWA, Just Another Text Editor utilizes a service worker and IndexedDB stora
 ## Installation Instructions
 
 <img src="./client/src/images/JATE-screenshot.png" width="300" style="float: right; margin-left: 15px; margin-bottom: 10px;" />
-The user can access Just Another Text Editor via a web browser [here on Heroku](https://developer.chrome.com/docs/workbox/). They can install it as a PWA via any browser with that technology enabled. Either utilize the browser's native application saver, or click the "Install" button in the main application window. They can now access the application via their browser's app menu or via whatever app icon that the browser creates.
+
+The user can access Just Another Text Editor via a web browser [on Heroku](https://jatebl.herokuapp.com). They can install it as a PWA via any browser with that technology enabled. Either utilize the browser's native application saver, or click the "Install" button in the main application window. They can now access the application via their browser's app menu or via whatever app icon that the browser creates.
 
 Note: Just Another Text Editor relies on the use of service workers and IndexedDB to operate. Most modern browsers do support these technologies on both desktop and mobile, though most older versions do not.
 
